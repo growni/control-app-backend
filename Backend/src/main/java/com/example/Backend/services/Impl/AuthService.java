@@ -83,7 +83,7 @@ public class AuthService {
             helper.setTo(email);
             helper.setSubject("Control App Password Reset");
 
-            String link = "http://localhost:5174/reset-password?token=" + token;
+            String link = "https://control-app-free.netlify.app/reset-password?token=" + token;
             String content = String.format("""
             <html>
               <body>
