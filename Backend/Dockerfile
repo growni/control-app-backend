@@ -1,5 +1,5 @@
 # Build stage
-FROM maven:3.9.9-openjdk-17 as build
+FROM maven:3.8.6-openjdk-17 as build
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
