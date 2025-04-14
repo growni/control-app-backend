@@ -17,6 +17,8 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,7 +71,7 @@ public class AuthService {
         }
 
         String token = UUID.randomUUID().toString();
-        LocalDateTime expires = LocalDateTime.now().plusMinutes(15);
+        Instant expires = Instant.now().plus(Duration.ofMinutes(15));
 
         PasswordResetToken resetToken = new PasswordResetToken(user.get(), token, expires);
 

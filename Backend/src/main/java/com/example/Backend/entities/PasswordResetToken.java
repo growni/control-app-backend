@@ -2,6 +2,7 @@ package com.example.Backend.entities;
 
 import jakarta.persistence.*;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Entity
@@ -16,12 +17,14 @@ public class PasswordResetToken {
     private User user;
 
     private String token;
-    private LocalDateTime expiresAt;
+
+    @Column(name = "expires_at", columnDefinition = "TIMESTAMP")
+    private Instant expiresAt;
 
     public PasswordResetToken() {
     }
 
-    public PasswordResetToken(User user, String token, LocalDateTime expiresAt) {
+    public PasswordResetToken(User user, String token, Instant expiresAt) {
         this.user = user;
         this.token = token;
         this.expiresAt = expiresAt;
@@ -51,16 +54,16 @@ public class PasswordResetToken {
         this.token = token;
     }
 
-    public LocalDateTime getExpirationDate() {
+    public Instant getExpirationDate() {
         return expiresAt;
     }
 
-    public void setExpirationDate(LocalDateTime expiresAt) {
+    public void setExpirationDate(Instant expiresAt) {
         this.expiresAt = expiresAt;
     }
 
     public boolean isExpired() {
-        return expiresAt.isBefore(LocalDateTime.now());
+        return expiresAt.isBefore(Instant.now());
     }
 
 }
