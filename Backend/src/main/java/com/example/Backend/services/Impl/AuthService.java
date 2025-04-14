@@ -122,6 +122,10 @@ public class AuthService {
 
         PasswordResetToken resetToken = tokenFromDb.get();
 
+        System.out.println("Is token expired: " + resetToken.isExpired());
+        System.out.println("Token expires at: " + resetToken.getExpirationDate());
+        System.out.println("Now: " + Instant.now());
+
         if(resetToken.isExpired()) {
             return false;
         }

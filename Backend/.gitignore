@@ -31,5 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
-/src/main/resources/local-application.properties
+/src/main/resources/hardcoded-application.properties
 /src/main/resources/production-application.properties
+/src/main/resources/hardcoded-application.properties
