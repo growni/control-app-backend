@@ -34,3 +34,4 @@ build/
 /src/main/resources/hardcoded-application.properties
 /src/main/resources/production-application.properties
 /src/main/resources/hardcoded-application.properties
+/src/main/resources/local-mysql-application.properties

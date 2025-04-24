@@ -41,7 +41,8 @@ public class SecurityConfig {
                                 "/api/profile/unsubscribe",
                                 "/api/profile/is-subscribed",
                                 "/api/profile/update-password",
-                                "/api/profile/feedback").permitAll()
+                                "/api/profile/feedback",
+                                "/api/admin/send-patch-notes").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
